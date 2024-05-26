@@ -1,0 +1,240 @@
+@font-face {
+  font-family: "NEXTSTEP";  /* Name you give to the font */
+  src: url(NEXTSTEP.woff) format('woff'),  /* Font file path and format */
+       url(NEXTSTEP.otf) format('otf');  /* Optional fallback for older browsers */
+}
+
+@font-face {
+  font-family: "VOYAGER";  /* Name you give to the font */
+  src: url(voyager.woff) format('woff'),  /* Font file path and format */
+       url(VOYAGER.ttf) format('ttf');  /* Optional fallback for older browsers */
+}
+
+
+body {
+  margin: 0;
+}
+
+
+.heading {
+  font-family: "NEXTSTEP";
+  font-weight: 700;
+  color: #B3C8CF;
+  font-size: 8em;
+  text-align: center;
+  position: relative;
+  top: 5rem;
+}
+
+.intro-heading {
+  font-family: "VOYAGER";
+  size: 3em;
+}
+
+
+.spider-heading{
+  font-family: "VOYAGER";
+  font-size: 3rem ;
+  color: #1D5D9B;
+
+}
+.intro-content{
+  font-family: "VOYAGER";
+  size: 1rem;
+  line-height: 1.5em;
+}
+
+/* spider-info */
+form {
+  width: 400px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #FEE8B0;
+  color: #2A2F4F;
+  margin: 0 auto;
+  font-family: "Orbitron", sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+
+legend {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 15px;
+}
+
+input[type="text"]{
+  width: 100%;
+  padding: 8px;
+  margin: 15px 0 15px 0;
+  box-sizing: border-box;
+  border: 2px solid #000;
+  border-radius: 4px;
+}
+
+input[type="radio"] {
+  margin: 0 0 15px 20px;
+}
+
+input[type="submit"] {
+  padding: 10px 20px;
+
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.intro-section{
+  display: flex;
+  padding: 2em;
+  gap: 20px;
+  height:80vh;
+  background-image: url(intro-bg.png);
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+}
+
+.shade {
+  color: #35A29F;
+}
+
+.about-project{
+  padding: 10px;
+  color: azure;
+  background-color: #31363F;
+  height: auto;
+  width: 75%;
+  position: relative;
+  margin: 5rem 5rem 0 5rem;
+  padding: 2em;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  border-radius: 2%;
+}
+
+.spider-status{
+  font-family: "NEXTSTEP";
+  font-size: 2rem;
+}
+.highlights {
+  size: 1.75em;
+  color: #A78295;
+}
+
+.instruction{
+  width: auto;
+}
+
+.intro-img{
+  height: 350px;
+  width: 700px;
+}
+
+.spiderRules{
+  height: 400px;
+  width: 900px;
+  border-radius: 1%;
+}
+
+.spider-info{
+  display: flex;
+  background-color: #F1EFEF;
+  padding: 2em;
+}
+
+.spider-form{
+  margin: 7rem 0 2rem 12rem;
+  }
+
+.spider-rules{
+  grid-column: 2;
+}
+
+.spider-info-form{
+  
+}
+
+#run-spider{
+  background-color: #BED754;
+  height: 50px;
+  width: 100%;
+  margin: 10x 0 10px 0;
+}
+
+.option-menu{
+  height: 50px;
+  width: 100%;
+}
+
+.data-model{
+  display: flex;
+  align-items: center;
+  padding: 4rem;
+  background-color: #526D82;
+  height: 100vh;
+}
+
+
+
+.result{
+  grid-column: 2;
+  padding: 1em;
+  display: block;
+}
+.result img {
+  width: 70%;
+  height: 30vh;
+  border-radius: 2%;
+}
+
+.data-select form {
+  margin: 5rem;
+  background-color:#CA8787;
+}
+
+.selectData {
+  background-color: #32012F;
+  color: white;
+  height: 60px;
+  width: 100%;
+}
+select {
+  margin-bottom: 2rem;
+}
+
+.result{
+  background-color: #ED8E7C;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.result-get{
+  padding: 4rem;
+}
+
+.result-get button {
+  width: 500px;
+  height: 60px;
+  border-radius: 5px;
+}
+
+#result-img {
+  display: block;
+  width: 100%;
+}
+.result-post{
+  width: 60%;
+  margin-right: 5rem;
+}
+
+#chart-container{
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}

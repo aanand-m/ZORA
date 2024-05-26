@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SENTIMENT</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='/styles.css') }}" />
+
+
+</head>
+
+<body>
+  <div class="data-model">
+    <h2 class="spider-heading" value="{{message}}">spider executed successfully.. <strong class="shade">{{message}}</strong> has been saved on dataset library on sentiment-bucket.</h2>
+    <div class="data-select">
+      <form method="POST" action="/selectDataset">
+        <label>SELECT A DATASET TO ANALYZE SENTIMENTS.</label>
+        <select class="option-menu" name="selected-option">
+          {% for option in options %}
+          <option value="{{ option }}">{{ option }}</option>
+          {% endfor %}
+        </select>
+        <button class="selectData" type="submit">SELECT A DATASET.</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

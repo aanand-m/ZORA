@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SENTIMENT</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='/styles.css') }}" />
+
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script>
+    function fetchData() {
+      resultImg = document.getElementById('result-img');
+      resultImg.style.display = 'none';
+      fetch('/data')
+        .then(response => response.json())
+        .then(data => {
+          const labels = Object.keys(data).map(key => {
+            switch (key) {
+              case '1': return 'Very Negative';
+              case '2': return 'Negative';
+              case '3': return 'Neutral';
+              case '4': return 'Positive';
+              case '5': return 'Promoter';
+              default: return 'Unknown';
+            }
+          });
+          const values = Object.values(data);
+          const colors = ['#c02942', '#e74c3c', '#ffc107', '#2ecc71', '#1abc9c'];
+          const trace = {
+            labels: labels,
+            values: values,
+            type: 'pie',
+            marker: {
+              colors: colors
+            }
+          };
+
+          const layout = {
+            title: 'Sentiment Distribution'
+          };
+
+          Plotly.newPlot('chart-container', [trace], layout);
+        })
+        .catch(error => console.error(error));
+    }
+  </script>
+
+</head>
+
+<body>
+  <div class="result">
+    <div class="result-get">
+      <h3 class="spider-heading" value="{{datasetInfo}}">Alright, you have selected: <strong class="shade">{{datasetInfo}}</strong></h3>
+      <button onclick="fetchData()">PERFORM ANALYSIS</button>
+    </div>
+
+    <div class="result-post">
+      <img id="result-img" src="{{ url_for('static', filename='/score.png') }}" alt="">
+      <div id="chart-container"></div>
+    </div>
+  </div>
+  </div>
+  </div>
+</body>
+
+</html>

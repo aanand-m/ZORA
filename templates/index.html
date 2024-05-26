@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SENTIMENT</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='/styles.css') }}" />
+
+
+</head>
+
+<body>
+  <div class="intro-section">
+    <div class="instructions">
+      <img src="{{ url_for('static', filename='intro.png') }}" alt="" class="intro-img">
+    </div>
+    <div class="about">
+      <h1 class="heading">ZORA</h1>
+      <div class="about-project">
+        <h2 class="intro-heading">WELCOME</h2>
+        <p class="intro-content">
+          Zora is a 'custom-built' <strong class="shade">business intelligence</strong> tool which analyzes sentiments from phrases provided to it by making use of meta's latest iteration of <strong class="shade">'roBERTa-multilingual</strong> model. Zora's work flow is as follows: 
+           <br> <br> <strong class="highlights">Generate Dataset:</strong> scrape product-reviews from e-commerce sites. clean and format the data as csv.
+            Dump dataset on amazon s3 bucket.
+          <br> <br><strong class="highlights">Fetch and Analyze:</strong> The generated dataset or any dataset from the s3 bucket is fetched. Sentiment analysis
+            using meta's ROBERTA model is performed.
+         <br> <br><strong class="highlights">Data Insights:</strong> Once analysis has been performed, a graph of 'insights' is generated and displayed to be ued
+            in conjuction with NPS data to derive Business Intellegence
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="spider-info">
+    <div class="spider-rules">
+      <h2 class="spider-heading">GENERATE DATASET</h2>
+      <img src="{{ url_for('static', filename='spiderRules.png') }}" alt="" class="spiderRules">
+    </div>
+    <div class="spider-form">
+      <form class="spider-info-form" method="POST" action="/runSpider">
+          <label>SELECT A SPIDER</label>
+          <input type="radio" name="spider-type" value="AMAZON" />AMAZON
+          <input type="radio" name="spider-type" value="FLIPKART" />FLIPKART
+          <input type="radio" name="spider-type" value="YOUTUBE" />YOUTUBE
+          <input type="text" name="link" placeholder="ENTER THE PRODUCT LINK"/>
+          <input type="text" name="file-name" placeholder="ENTER NAME FOR YOUR DATASET. (USE: .csv extension)"/>
+          <input type="text" name="pages" placeholder="ENTER THE NO. OF PAGES TO SCRAPE. (one page has 10 reviews)"/>
+          <button id="run-spider" type="submit">EXTRACT DATA</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
